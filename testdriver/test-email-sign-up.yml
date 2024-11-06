@@ -1,0 +1,30 @@
+version: 4.0.80
+steps:
+  - prompt: Enter a valid email in the "Email address" field.
+    commands:
+      - command: hover-text
+        text: Email address*
+        description: email input field
+        action: click
+      - command: type
+        text: test@example.com
+  - prompt: Enter a valid password in the "Password" field.
+    commands:
+      - command: hover-text
+        text: Password*
+        description: password input field
+        action: click
+      - command: type
+        text: SecurePass123!
+  - prompt: Click "Continue."
+    commands:
+      - command: hover-text
+        text: Continue
+        description: continue button
+        action: click
+  - prompt: >-
+      Assert that a welcome message or confirmation is displayed.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: Welcome to Levro! is displayed
