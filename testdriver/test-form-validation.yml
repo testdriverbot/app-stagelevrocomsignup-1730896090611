@@ -1,0 +1,30 @@
+version: 4.0.80
+steps:
+  - prompt: Attempt to sign up with empty fields.
+    commands:
+      - command: hover-text
+        text: Continue
+        description: button to submit the sign-up form
+        action: click
+  - prompt: Assert that appropriate validation messages are shown.
+    commands:
+      - command: assert
+        expect: Please fill out this field is visible
+  - prompt: Try invalid email formats.
+    commands:
+      - command: hover-text
+        text: Email address*
+        description: email input field
+        action: click
+      - command: type
+        text: invalid-email
+      - command: hover-text
+        text: Continue
+        description: button to submit the sign-up form
+        action: click
+  - prompt: >-
+      Assert validation messages continue to guide the user.  # Use the content
+      of the file from the environment
+    commands:
+      - command: assert
+        expect: Please fill out this field is visible
