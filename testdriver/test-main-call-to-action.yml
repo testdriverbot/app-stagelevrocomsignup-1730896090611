@@ -1,0 +1,32 @@
+version: 4.0.80
+steps:
+  - prompt: Click on "Continue" on the sign-up form.
+    commands:
+      - command: hover-text
+        text: Continue
+        description: button on the sign-up form
+        action: click
+  - prompt: Click on "Continue" on the sign-up form.
+    commands:
+      - command: hover-text
+        text: Email address*
+        description: email input field on the sign-up form
+        action: click
+      - command: type
+        text: test@example.com
+      - command: hover-text
+        text: Continue
+        description: button on the sign-up form
+        action: click
+  - prompt: Click on "Continue" on the sign-up form.
+    commands:
+      - command: hover-text
+        text: Password*
+        description: password input field on the sign-up form
+        action: click
+      - command: type
+        text: SecurePass123
+      - command: hover-text
+        text: Continue
+        description: button on the sign-up form
+        action: click
