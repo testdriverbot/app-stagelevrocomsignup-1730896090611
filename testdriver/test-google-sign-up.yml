@@ -1,0 +1,57 @@
+version: 4.0.80
+steps:
+  - prompt: Click on "Continue with Google."
+    commands:
+      - command: hover-text
+        text: Continue with Google
+        description: button to sign up using Google
+        action: click
+  - prompt: Click on "Continue with Google."
+    commands:
+      - command: hover-text
+        text: Continue with Google
+        description: button to sign up using Google
+        action: double-click
+      - command: hover-image
+        description: Google logo on the "Continue with Google" button
+        action: click
+  - prompt: Assert that Google login prompts appear.
+    commands:
+      - command: assert
+        expect: Google login prompts are visible
+  - prompt: Complete the Google login process.
+    commands:
+      - command: hover-text
+        text: Email or phone
+        description: email input field
+        action: click
+      - command: type
+        text: testuser@gmail.com
+      - command: hover-text
+        text: Next
+        description: next button
+        action: click
+  - prompt: Complete the Google login process.
+    commands:
+      - command: hover-text
+        text: I'm not a robot
+        description: reCAPTCHA checkbox
+        action: click
+      - command: hover-text
+        text: Next
+        description: next button after verification
+        action: click
+  - prompt: Complete the Google login process.
+    commands:
+      - command: hover-text
+        text: OK
+        description: reCAPTCHA error dialog
+        action: click
+      - command: hover-text
+        text: I'm not a robot
+        description: reCAPTCHA checkbox
+        action: click
+      - command: hover-text
+        text: Next
+        description: next button
+        action: click
